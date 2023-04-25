@@ -1,16 +1,18 @@
+player = y
 def players():
     global X
-    player = y
+    global player
     while True:
         print(f"Player {player}, enter a position to apply {player}: ")
         position = int(input())
         if X[position] == ' ':
             X[position] = player
             draw()
-            break
+            #break
         else:
             print("That position is already taken. Try again.")
-    return win()
+        if win()==True:
+            return True
 
 
 def win():
