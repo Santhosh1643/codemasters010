@@ -12,14 +12,19 @@ def players():
         player_2_postion=player_2.def draw() 
 
         if  player_1_postion == player_2_postion:
+            player_1_postion=0
+            
             return player_1
             print("position has already filled")
         elif player_1_postion == player_1_postion:
+             player_1_postion=0
              return player_1
              print("position has already filled")
         elif player_2_postion == player_2_postion:
+             player_2_postion=0
              return player_2
              print("position has already filled")
         elif player_2_postion == player_1_postion:
+             player_2_postion=0
              return player_2
              print("position has already filled")
