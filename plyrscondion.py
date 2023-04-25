@@ -15,14 +15,14 @@ def players():
 
 def win():
     global X
-    if (X[1] == X[2] == X[3] != ' ' or
-        X[4] == X[5] == X != ' ' or
-        X == X == X != ' ' or
-        X[1] == X[4] == X != ' ' or
-        X[2] == X[5] == X != ' ' or
-        X[3] == X == X != ' ' or
-        X[1] == X[5] == X != ' ' or
-        X[3] == X[5] == X != ' '):
+    if (X[1] == X[2] == X[3] == player or
+        X[4] == X[5] == X[6] == player or
+        X[7] == X[8] == X[9] == player or
+        X[1] == X[4] == X[7] == player or
+        X[2] == X[5] == X[8] == player or
+        X[3] == X[6] == X[9] == player or
+        X[1] == X[5] == X[9] == player or
+        X[3] == X[5] == X[7] == player):
         return True
     else:
         return False
