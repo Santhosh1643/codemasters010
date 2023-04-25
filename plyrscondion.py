@@ -1,48 +1,45 @@
 def players():
-    player_1=int(input("enter a position to apply x OR o:"))
-    while player_1==x:
-        print("you had determined position👍")
-        input("enter x or o :")
-        player_1_postion=player_1.draw()
-            
-    player_2=int(input("enter a position to apply x OR o:"))
-    while player_2==x:
-        print("you had determined position👍")
+    global X
+    player = y
+    while True:
+        print(f"Player {player}, enter a position to apply {player}: ")
+        position = int(input())
+        if X[position] == ' ':
+            X[position] = player
+            draw()
+            break
+        else:
+            print("That position is already taken. Try again.")
+    return win()
 
-        input("enter x or o :")
-        player_2_postion=player_2.draw() 
 
-        if  player_1_postion == player_2_postion:
-            player_1_postion-=player_1_postion
-            print("position has already filled")
-            
-            return player_1
-            
-        elif player_1_postion == player_1_postion:
-             player_1_postion-=player_1_postion
-             print("position has already filled")
-             return player_1
-             
-        elif player_2_postion == player_2_postion:
-             player_2_postion-=player_2_postion
-             print("position has already filled")
-             return player_2
-             
-        elif player_2_postion == player_1_postion:
-             player_2_postion-=player_2_postion
-             print("position has already filled")
-             return player_2
-             
-        rounds_for_player_1+=player_1
-        print("player1 have entering",round,"round")
-        rounds_for_player_2+=player_2
-        print("player2 have entering",round,"round")
-        if player_1< len(x[3]):
-                print("player_1 had tried all his/her chance")
-        elif player_2<len(x[3]):
-                print("player_2 had tried all his/her chance")
-        else :
-                return players() 
+def win():
+    global X
+    if (X[1] == X[2] == X[3] != ' ' or
+        X[4] == X[5] == X != ' ' or
+        X == X == X != ' ' or
+        X[1] == X[4] == X != ' ' or
+        X[2] == X[5] == X != ' ' or
+        X[3] == X == X != ' ' or
+        X[1] == X[5] == X != ' ' or
+        X[3] == X[5] == X != ' '):
+        return True
+    else:
+        return False
 
-                
-            
+
+def main():
+    start()
+    while True:
+        if players():
+            print(f"Player {y} wins!")
+            break
+        elif players():
+            print(f"Player {z} wins!")
+            break
+        elif ' ' not in X:
+            print("It's a tie!")
+            break
+
+if __name__ == '__main__':
+    main() 
